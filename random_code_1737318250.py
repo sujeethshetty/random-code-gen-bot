@@ -1,4 +1,4 @@
-Here is a simple Python program that generates a random password based on user input for the length of the password:
+Sure! Here's a simple Python program that generates a random password of a specified length:
 
 ```python
 import random
@@ -9,17 +9,16 @@ def generate_password(length):
     password = ''.join(random.choice(characters) for i in range(length))
     return password
 
-def main():
+# Get user input for password length
+try:
     length = int(input("Enter the length of the password: "))
-    
-    if length < 6:
-        print("Password length should be at least 6 characters.")
-    else:
-        password = generate_password(length)
-        print("Your random password is:", password)
-
-if __name__ == "__main__":
-    main()
+    if length <= 0:
+        raise ValueError("Length must be a positive integer")
+except ValueError as e:
+    print(f"Error: {e}")
+else:
+    password = generate_password(length)
+    print(f"Generated password: {password}")
 ```
 
-In this program, the `generate_password
+This program defines a function `
