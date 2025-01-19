@@ -1,18 +1,24 @@
-Here is a simple Python program that generates a random quote each time it is run:
+Here is a simple Python program that generates a random number between 1 and 10 and asks the user to guess the number. It then provides feedback on whether the guess is correct or not:
 
 ```python
 import random
 
-def get_random_quote():
-    quotes = [
-        "The only way to do great work is to love what you do. - Steve Jobs",
-        "Success is not the key to happiness. Happiness is the key to success. - Albert Schweitzer",
-        "In the middle of difficulty lies opportunity. - Albert Einstein",
-        "The best way to predict the future is to create it. - Peter Drucker",
-        "Don't watch the clock; do what it does. Keep going. - Sam Levenson"
-    ]
+def guess_number():
+    secret_number = random.randint(1, 10)
     
-    return random.choice(quotes)
+    while True:
+        user_guess = input("Guess the number between 1 and 10: ")
+        
+        if not user_guess.isdigit():
+            print("Please enter a valid number.")
+            continue
+        
+        user_guess = int(user_guess)
+        
+        if user_guess == secret_number:
+            print("Congratulations! You guessed the correct number.")
+            break
+        else:
+            print("Incorrect. Try again!")
 
-def main():
-    print("Here is your random quote
+if __name__ ==
