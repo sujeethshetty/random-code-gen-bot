@@ -1,24 +1,24 @@
-Here is a simple Python program that generates a random number and asks the user to guess it. It includes functions, variables, loops, and conditional statements.
+Here is a simple Python program that generates a random list of numbers and then calculates the average of those numbers:
 
 ```python
 import random
 
-def generate_random_number():
-    return random.randint(1, 10)
+def generate_random_list(length):
+    random_list = [random.randint(1, 100) for _ in range(length)]
+    return random_list
 
-def guess_number():
-    random_number = generate_random_number()
-    
-    while True:
-        user_guess = int(input("Guess a number between 1 and 10: "))
-        
-        if user_guess == random_number:
-            print("Congratulations! You guessed the correct number.")
-            break
-        else:
-            print("Try again! That's not the correct number.")
+def calculate_average(numbers):
+    total = sum(numbers)
+    average = total / len(numbers)
+    return average
 
-if __name__ == "__main__":
-    print("Welcome to the Number Guessing Game!")
-    guess_number()
-``
+# Generate a random list of numbers
+random_numbers = generate_random_list(5)
+print("Random Numbers:", random_numbers)
+
+# Calculate the average of the random numbers
+average = calculate_average(random_numbers)
+print("Average:", average)
+```
+
+In this program, we first define a function `generate_random_list` that generates a list of random
