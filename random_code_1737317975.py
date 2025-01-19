@@ -1,21 +1,23 @@
-Here is a simple Python program that generates a random password based on user input for the length of the password:
+Of course! Here's a simple Python program that generates a random number and asks the user to guess it:
 
 ```python
 import random
-import string
 
-def generate_password(length):
-    characters = string.ascii_letters + string.digits + string.punctuation
-    password = ''.join(random.choice(characters) for i in range(length))
-    return password
+def generate_random_number():
+    return random.randint(1, 100)
 
 def main():
-    try:
-        password_length = int(input("Enter the length of the password to generate: "))
-        if password_length <= 0:
-            print("Please enter a positive integer for the password length.")
+    random_number = generate_random_number()
+    
+    print("Welcome to the Number Guessing Game!")
+    print("I have chosen a number between 1 and 100. Can you guess it?")
+    
+    while True:
+        guess = int(input("Enter your guess: "))
+        
+        if guess < random_number:
+            print("Too low. Try again.")
+        elif guess > random_number:
+            print("Too high. Try again.")
         else:
-            password = generate_password(password_length)
-            print("Generated Password:", password)
-    except ValueError:
-        print("Invalid input. Please enter a valid integer for
+            print(f"Congratulations! You guessed the number {random
