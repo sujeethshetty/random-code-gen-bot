@@ -1,24 +1,21 @@
-Here is a simple Python program that generates a random integer between a specified range and checks if the number is prime:
+Here is a simple Python program that generates a random multiplication quiz for the user to solve:
 
 ```python
 import random
 
-def is_prime(num):
-    if num < 2:
-        return False
-    for i in range(2, int(num ** 0.5) + 1):
-        if num % i == 0:
-            return False
-    return True
+def generate_question():
+    num1 = random.randint(1, 10)
+    num2 = random.randint(1, 10)
+    answer = num1 * num2
+    return num1, num2, answer
 
-def generate_random_number(min_value, max_value):
-    return random.randint(min_value, max_value)
+def check_answer(num1, num2, answer):
+    user_answer = int(input(f"What is {num1} x {num2}? "))
+    if user_answer == answer:
+        print("Correct!")
+    else:
+        print(f"Wrong! The correct answer is {answer}")
 
-min_value = 1
-max_value = 100
-
-random_number = generate_random_number(min_value, max_value)
-print(f"Random number generated: {random_number}")
-
-if is_prime(random_number):
-    print("The random number is
+def main():
+    print("Welcome to the Multiplication Quiz!")
+    for _ in range(5):
