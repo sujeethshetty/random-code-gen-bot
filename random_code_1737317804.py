@@ -1,4 +1,4 @@
-Here's a simple Python program that generates a random password of a specified length:
+Here is a simple Python program that generates a random password of a specified length:
 
 ```python
 import random
@@ -10,12 +10,14 @@ def generate_password(length):
     return password
 
 def main():
-    length = int(input("Enter the length of the password: "))
+    print("Welcome to the Random Password Generator!")
+    length = int(input("Enter the length of the password you want to generate: "))
+    
     password = generate_password(length)
-    print("Generated Password:", password)
+    print(f"Your random password is: {password}")
 
 if __name__ == "__main__":
     main()
 ```
 
-This program defines a function `generate_password` that takes a length parameter and generates a random password using a combination of letters, digits, and special characters. The `main` function prompts the user to
+This program defines a function `generate_password` that creates a random password by selecting characters from the combination of
