@@ -1,21 +1,21 @@
-Sure! Here is a simple Python program that generates a random password based on the user's preferences for length and complexity:
+Here is a simple Python program that generates a random password of a specified length:
 
 ```python
 import random
 import string
 
-def generate_password(length, include_numbers, include_symbols):
-    characters = string.ascii_letters
-    if include_numbers:
-        characters += string.digits
-    if include_symbols:
-        characters += string.punctuation
-
-    password = ''.join(random.choice(characters) for _ in range(length))
+def generate_password(length):
+    characters = string.ascii_letters + string.digits + string.punctuation
+    password = ''.join(random.choice(characters) for i in range(length))
     return password
 
 def main():
-    print("Welcome to the Random Password Generator!")
     length = int(input("Enter the length of the password: "))
-    include_numbers = input("Include numbers? (y/n): ").lower() == 'y'
-    include_symbols = input("Include symbols
+    password = generate_password(length)
+    print("Generated Password:", password)
+
+if __name__ == "__main__":
+    main()
+```
+
+This program defines a `generate_password` function that takes a length parameter and uses a combination of letters, digits, and punctuation to create a random password of the specified length. The `main` function
