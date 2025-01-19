@@ -1,23 +1,21 @@
-Here's a simple Python program that generates a random password of a specified length:
+Here is a simple Python program that generates a random number and asks the user to guess it. The program will provide hints if the guess is too high or too low:
 
 ```python
 import random
-import string
 
-def generate_password(length):
-    characters = string.ascii_letters + string.digits + string.punctuation
-    password = ''.join(random.choice(characters) for _ in range(length))
-    return password
-
-def main():
-    length = int(input("Enter the length of the password: "))
-    password = generate_password(length)
-    print("Generated Password:", password)
+def guess_number():
+    secret_number = random.randint(1, 100)
+    
+    while True:
+        user_guess = int(input("Guess a number between 1 and 100: "))
+        
+        if user_guess < secret_number:
+            print("Too low, try again!")
+        elif user_guess > secret_number:
+            print("Too high, try again!")
+        else:
+            print("Congratulations! You guessed the correct number.")
+            break
 
 if __name__ == "__main__":
-    main()
-```
-
-In this program:
-- The `generate_password` function generates a random password of the specified length using a combination of letters, digits, and special characters.
-- The `main` function takes user input
+    print("Welcome to the Number Guessing Game!")
