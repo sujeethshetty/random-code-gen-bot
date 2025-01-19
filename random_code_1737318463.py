@@ -1,23 +1,22 @@
-Here is a simple Python program that generates a list of random numbers and then calculates the mean and standard deviation of those numbers:
+Here is a simple Python program that generates a random password of a specified length:
 
 ```python
 import random
-import math
+import string
 
-def generate_random_numbers(n):
-    random_numbers = [random.randint(1, 100) for _ in range(n)]
-    return random_numbers
+def generate_password(length):
+    characters = string.ascii_letters + string.digits + string.punctuation
+    password = ''.join(random.choice(characters) for _ in range(length))
+    return password
 
-def calculate_mean(numbers):
-    return sum(numbers) / len(numbers)
-
-def calculate_standard_deviation(numbers, mean):
-    variance = sum((x - mean) ** 2 for x in numbers) / len(numbers)
-    std_deviation = math.sqrt(variance)
-    return std_deviation
+def main():
+    password_length = int(input("Enter the length of the password: "))
+    password = generate_password(password_length)
+    
+    print(f"Generated Password: {password}")
 
 if __name__ == "__main__":
-    n = 10
-    random_numbers = generate_random_numbers(n)
-    
-    print
+    main()
+```
+
+This program first defines a function `generate_password` that takes a length parameter and generates a random password using a combination of letters, digits, and punctuation symbols. The `main
