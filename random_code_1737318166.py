@@ -9,13 +9,13 @@ def generate_password(length):
     password = ''.join(random.choice(characters) for i in range(length))
     return password
 
-password_length = int(input("Enter the length of the password: "))
+def main():
+    length = int(input("Enter the length of the password: "))
+    password = generate_password(length)
+    print("Generated Password:", password)
 
-if password_length <= 0:
-    print("Please enter a valid password length.")
-else:
-    password = generate_password(password_length)
-    print("Your random password is:", password)
+if __name__ == "__main__":
+    main()
 ```
 
-In this program, the `generate_password` function generates a random password of the specified length by randomly selecting characters from the set of letters, digits, and
+This program defines a function `generate_password` that takes a length parameter and generates a random password using a combination of uppercase letters, lowercase letters, digits, and special characters. The `main` function
